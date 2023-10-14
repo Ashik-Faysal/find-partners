@@ -1,5 +1,12 @@
 import React from "react";
 import { AiFillMacCommand } from "react-icons/ai";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 
 const Footer = () => {
   return (
@@ -46,11 +53,17 @@ const Footer = () => {
           </nav>
         </div>
         <div class="bg-white h-[1px] w-full my-4"></div>
-        <div className="py-4 px-12">
+        <div className="py-4 px-12 flex justify-between">
           <p>
             Sambhaji Nagar, No2, St. Antory Road, Chember, Mumbai - 40007,
             Maharastra
           </p>
+          <div className="flex gap-0">
+            <FaFacebook className="text-blue-500 text-2xl mr-4" />
+            <FaInstagram className="text-pink-500 text-2xl mr-4" />
+            <FaLinkedin className="text-indigo-500 text-2xl mr-4" />
+            <FaWhatsapp className="text-green-500 text-2xl" />
+          </div>
         </div>
       </div>
       <div className=" text-center items-center p-4 bg-black ">
