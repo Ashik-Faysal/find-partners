@@ -1,10 +1,12 @@
 import React from 'react';
 import FrontPage from './FrontPage';
+import JoinWithUs from './JoinWithUs';
 
 const Home = () => {
     return (
         <>
-        <FrontPage/>
+            <FrontPage />
+            <JoinWithUs/>
         </>
     );
 };
