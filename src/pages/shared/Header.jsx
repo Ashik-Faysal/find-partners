@@ -3,28 +3,14 @@ import { AiFillMacCommand, AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isSolutionOpen, setIsSolutionOpen] = useState(false);
-  const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-
-  const toggleSolutionDropdown = () => {
-    setIsSolutionOpen(!isSolutionOpen);
-  };
-
-  const toggleFeaturesDropdown = () => {
-    setIsFeaturesOpen(!isFeaturesOpen);
-  };
-
-  const toggleAboutDropdown = () => {
-    setIsAboutOpen(!isAboutOpen);
-  };
-
   return (
     <>
       <div className="flex justify-between px-4 py-2 ">
         <div className="flex items-center gap-2">
           <AiFillMacCommand size={24} />
-          <h4 className="text-2xl">Find Partner</h4>
+          <h4 className="text-2xl bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">
+            Find Partner
+          </h4>
         </div>
         <div className="flex items-center gap-4">
           <div className="dropdown dropdown-hover">
@@ -90,8 +76,12 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <Link className="btn btn-outline" href="/login">Login</Link>
-          <Link className="btn btn-info" href="/register">Register</Link>
+          <Link className="btn btn-outline" to="/login">
+            Login
+          </Link>
+          <Link className="btn btn-info" to="/register">
+            Register
+          </Link>
         </div>
       </div>
     </>

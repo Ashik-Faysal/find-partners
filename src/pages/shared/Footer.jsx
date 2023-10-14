@@ -16,7 +16,9 @@ const Footer = () => {
           <nav>
             <div className="flex gap-2 items-center">
               <AiFillMacCommand size={24} />
-              <h4 className="text-2xl">Find Partner</h4>
+              <h4 className="text-2xl bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">
+                Find Partner
+              </h4>
             </div>
             <p>
               India's first platform dedicated to simplifying partner search
