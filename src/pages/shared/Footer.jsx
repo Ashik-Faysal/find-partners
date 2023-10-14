@@ -6,11 +6,9 @@ import {
   FaLinkedin,
   FaWhatsapp,
 } from "react-icons/fa";
-
-
 const Footer = () => {
   return (
-    <footer>
+    <footer className="container">
       <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-500">
         <div className="footer p-10 text-base-content">
           <nav>
@@ -60,7 +58,7 @@ const Footer = () => {
             Sambhaji Nagar, No2, St. Antory Road, Chember, Mumbai - 40007,
             Maharastra
           </p>
-          <div className="flex gap-0">
+          <div className="md:flex gap-1 md:gap-0">
             <FaFacebook className="text-blue-500 text-2xl mr-4" />
             <FaInstagram className="text-pink-500 text-2xl mr-4" />
             <FaLinkedin className="text-indigo-500 text-2xl mr-4" />
