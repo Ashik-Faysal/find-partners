@@ -38,27 +38,27 @@ const FrontPage = () => {
         {/* <!-- Image 1 --> */}
         <div class="group  hidden lg:block md:relative md:top-24">
           <img
-            src="https://i.ibb.co/LkD2Lnv/IMG-20181215-123138.jpg"
+            src="https://i.ibb.co/5MFWFB7/Picture.png"
             alt="Image 1"
-            class=" w-[198px] h-[337px] rounded-lg group-hover:opacity-80 transition-opacity"
+            class=" w-[198px] h-[403px] rounded-lg group-hover:opacity-80 transition-opacity"
           />
         </div>
 
         {/* <!-- Image 2 --> */}
         <div class="group  hidden lg:block md:relative md:top-16">
           <img
-            src="https://i.ibb.co/gMsjMHk/sojib.jpg"
+            src="https://i.ibb.co/Ss2T71n/Picture-4.png"
             alt="Image 2"
-            class=" w-[198px] h-[337px] rounded-lg group-hover:opacity-80 transition-opacity"
+            class=" w-[198px] h-[403px] rounded-lg group-hover:opacity-80 transition-opacity"
           />
         </div>
 
         {/* <!-- Image 3 --> */}
         <div class="group hidden lg:block md:relative md:top-8">
           <img
-            src="https://i.ibb.co/bz0bpr1/akash.jpg"
+            src="https://i.ibb.co/fpZ8LfL/Picture-5.png"
             alt="Image 3"
-            class=" w-[198px] h-[337px] rounded-lg group-hover:opacity-80 transition-opacity"
+            class=" w-[198px] h-[403px] rounded-lg group-hover:opacity-80 transition-opacity"
           />
         </div>
       </div>
