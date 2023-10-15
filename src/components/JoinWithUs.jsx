@@ -4,7 +4,7 @@ import Card from "./Card";
 const JoinWithUs = () => {
   const [cardData, setCardData] = useState();
   useEffect(() => {
-    fetch("joinUs.json")
+    fetch("https://find-partners-server.vercel.app/joinUs")
       .then((res) => res.json())
       .then((data) => setCardData(data));
   }, []);

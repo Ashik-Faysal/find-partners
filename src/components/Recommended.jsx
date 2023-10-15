@@ -5,7 +5,7 @@ import Details from "./Details";
 const Recommended = () => {
   const [recommendedData, setRecommendedData] = useState();
   useEffect(() => {
-    fetch("recommended.json")
+    fetch("https://find-partners-server.vercel.app/recommended")
       .then((res) => res.json())
       .then((data) => setRecommendedData(data));
   }, []);

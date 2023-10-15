@@ -32,7 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details />,
-        // loader: ({ params }) => fetch(`recommended.json/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://find-partners-server.vercel.app/recommended/${params.id}`
+          ),
       },
     ],
   },
