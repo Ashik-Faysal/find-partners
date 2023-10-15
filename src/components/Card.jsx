@@ -4,11 +4,11 @@ const Card = ({ card }) => {
   const { id, name, description, dueDate, penalty, upperLimit } = card;
 
   return (
-    <div className="relative max-w-md mx-auto p-8 rounded-xl overflow-hidden shadow-2xl bg-white">
+    <div className="relative max-w-3xl mx-auto px-8 pt-8 rounded-xl overflow-hidden shadow-2xl bg-white">
       <div>
         <h3 className="text-2xl text-center mb-2">{name}</h3>
         <p className="text-center mb-2">{description}</p>
-        <div className="flex justify-around gap-4 px-8 mb-2 bg-[#F4F4F4] rounded-md p-4 h-36">
+        <div className="flex justify-around gap-4 px-8 mb-2 bg-[rgb(244,244,244)] rounded-md p-4 mt-4">
           <p className="font-semibold">
             <span className="text-blue-500">Due Date</span> <br /> {dueDate}
           </p>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AiFillMacCommand, AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
+import { MdCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -29,10 +30,10 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden p-4 bg-white">
           <div className="flex justify-end">
-            <AiOutlineMenu
+            <MdCancel
               size={24}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-blue-500 cursor-pointer"
+              className="text-red-500 cursor-pointer"
             />
           </div>
           <ul className="mt-4 space-y-2">

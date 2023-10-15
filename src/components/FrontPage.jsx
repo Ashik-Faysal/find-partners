@@ -5,11 +5,11 @@ const FrontPage = () => {
       <div className="mx-auto w-[50%]">
         <div className="md:p-16 lg:p-32 p-2">
           <h1 className="text-5xl font-bold  mb-4">
-            Find
+            Find &nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500">
               Partners
-            </span>
-            (CAs) Available Online
+            </span>&nbsp;
+          (CAs) Available Online
           </h1>
           <p className=" mb-8">
             <span className="text-xl font-semibold uppercase">Connect</span>{" "}

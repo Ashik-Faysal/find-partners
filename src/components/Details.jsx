@@ -59,7 +59,7 @@ const Details = () => {
             <h3 className="text-4xl font-bold text-center mb-2">
               What people say?
             </h3>
-            <p className="w-80 mx-auto">{peopleSay}</p>
+            {peopleSay && peopleSay.map((say, index) => <p key={index}>{say}</p>)}
           </div>
         </div>
         <div className="py-4 px-2">
@@ -87,15 +87,11 @@ const Details = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <h4 className="text-2xl font-bold mb-4 ">Services I Prefer</h4>
-                {
-                  services && services.map(service => <li>{service}</li>)
-                }
+                {services && services.map((service) => <li>{service}</li>)}
               </div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Why I am?</h4>
-                {
-                  whyMe && whyMe.map(me => <li>{me}</li>)
-                }
+                {whyMe && whyMe.map((me) => <li>{me}</li>)}
               </div>
             </div>
           </div>

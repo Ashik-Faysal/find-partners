@@ -12,9 +12,9 @@ const Footer = () => {
       <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-500">
         <div className="footer p-10 text-base-content">
           <nav>
-            <div className="flex gap-2 items-center">
-              <AiFillMacCommand size={24} />
-              <h4 className="text-2xl bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">
+            <div className="flex gap-2 items-center font-bold">
+              <AiFillMacCommand size={32} />
+              <h4 className="text-4xl text-amber-950">
                 Find Partner
               </h4>
             </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" text-center items-center p-4 bg-black ">
+      <div className=" text-center items-center text-white p-4 bg-black ">
         <p>
           Registered trademark of India Private Limited © 2023 Find Partner Inc.
           All Rights Reserved
