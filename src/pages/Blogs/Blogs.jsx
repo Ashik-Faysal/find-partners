@@ -1,5 +1,6 @@
 import React from 'react';
-import JoinWithUs from '../Home/JoinWithUs';
+import JoinWithUs from '../../components/JoinWithUs';
+
 
 const Blogs = () => {
     return (

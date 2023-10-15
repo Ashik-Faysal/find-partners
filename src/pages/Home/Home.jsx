@@ -1,7 +1,8 @@
 import React from "react";
-import FrontPage from "./FrontPage";
-import JoinWithUs from "./JoinWithUs";
-import AllInOne from "./AllInOne";
+import FrontPage from "../../components/FrontPage";
+import JoinWithUs from "../../components/JoinWithUs";
+import AllInOne from "../../components/AllInOne";
+import Recommended from "../../components/Recommended";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <FrontPage />
       <JoinWithUs />
       <AllInOne />
+      <Recommended/>
     </>
   );
 };

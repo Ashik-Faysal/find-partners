@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import Home from "../pages/Home/Home";
 import Blogs from "../pages/Blogs/Blogs";
+import Details from "../components/Details";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/details/:id",
+        element: <Details />,
+        // loader: ({ params }) => fetch(`recommended.json/${params.id}`),
       },
     ],
   },
