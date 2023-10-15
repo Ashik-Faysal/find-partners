@@ -28,7 +28,7 @@ const Details = () => {
       <div className="grid md:grid-cols-2">
         <div className=" bg-white shadow-2xl my-4 rounded-none px-12 py-2">
           <div className="p-4">
-            <h3 className="text-4xl font-bold text-center mb-2">{name}</h3>
+            <h3 className="text-4xl font-bold mb-2">{name}</h3>
             <p className="text-center mb-2">{fullDescription}</p>
             <div class="flex items-center text-blue-400 p-4 font-bold">
               <AiFillStar />
@@ -59,10 +59,10 @@ const Details = () => {
             <h3 className="text-4xl font-bold text-center mb-2">
               What people say?
             </h3>
-            <p>{peopleSay}</p>
+            <p className="w-80 mx-auto">{peopleSay}</p>
           </div>
         </div>
-        <div className="h-[100vh] py-4 px-2">
+        <div className="py-4 px-2">
           <img className="w-full rounded-lg" src={image} alt={name} />
           <div className="px-4">
             <h3 className="text-4xl font-bold mb-4">About &nbsp;{name}</h3>
@@ -84,14 +84,18 @@ const Details = () => {
               <h3 className="text-2xl mt-4 font-bold mb-1">About</h3>
               <p>{about}</p>
             </div>
-            <div className="flex justify-around">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="text-2xl font-bold mb-4">Services I Prefer</h4>
-                <p>{services}</p>
+                <h4 className="text-2xl font-bold mb-4 ">Services I Prefer</h4>
+                {
+                  services && services.map(service => <li>{service}</li>)
+                }
               </div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Why I am?</h4>
-                <p>{whyMe}</p>
+                {
+                  whyMe && whyMe.map(me => <li>{me}</li>)
+                }
               </div>
             </div>
           </div>
