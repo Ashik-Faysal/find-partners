@@ -12,10 +12,10 @@ const JoinWithUs = () => {
     <>
       <div className="text-center font-semibold mb-4">
         <h1 className="text-5xl font-bold  mb-4">
-          Want to
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500">
+          Want to &nbsp;
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500">
             Join
-          </span>
+          </span>&nbsp;
           Us?
         </h1>
         <p className="my-4">

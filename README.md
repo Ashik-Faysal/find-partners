@@ -1,8 +1,7 @@
 # Find Partners
+<p>This is the Find Partner website . This website build in ReactJs, Tailwind css, Daisy ui , for authentication I use Firebase  and many npm package. For backend data I use ExpressJs, Cross and dotenv .</p>
 
 ## Live Link : https://finds-partners.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
