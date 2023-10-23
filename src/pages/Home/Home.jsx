@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <FrontPage />
-      <JoinWithUs />
+      {/* <JoinWithUs /> */}
       <AllInOne />
       <Recommended/>
     </>
