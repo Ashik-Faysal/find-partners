@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaSuitcaseRolling } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const { id } = useParams();
@@ -23,6 +24,81 @@ const Details = () => {
     services,
     whyMe,
   } = items;
+  // Your JavaScript code
+  const handleChatButtonClick = () => {
+    Swal.fire({
+      title: "Chat with me",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Start Chat",
+      cancelButtonText: "Cancel",
+      html: `
+      <div class="mb-3">
+        <input id="name" class="swal2-input" type="text" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <input id="email" class="swal2-input" type="email" placeholder="Email">
+      </div>
+      <div class="mb-3">
+        <input id="chatMessage" class="swal2-input h-24 custom-textarea" type="text" placeholder="Type your message here">
+      </div>
+    `,
+      preConfirm: () => {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const chatMessage = document.getElementById("chatMessage").value;
+
+        if (!name || !email || !chatMessage) {
+          Swal.showValidationMessage(`All fields are required.`);
+        }
+
+        return { name, email, chatMessage };
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const { name, email, chatMessage } = result.value;
+        Swal.fire(
+          `Chat started by ${name}`,
+          `Email: ${email}\nMessage: ${chatMessage}`,
+          "success"
+        );
+      }
+    });
+  };
+
+  const handleRequestProposalButtonClick = () => {
+    Swal.fire({
+      title: "Chat with me",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Request Proposal",
+      cancelButtonText: "Cancel",
+      html: `
+      <div class="mb-3">
+        <input id="name" class="swal2-input" type="text" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <input id="email" class="swal2-input" type="email" placeholder="Email">
+      </div>
+    `,
+      preConfirm: () => {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        if (!name || !email) {
+          Swal.showValidationMessage(`All fields are required.`);
+        }
+
+        return { name, email };
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const { name, email } = result.value;
+        Swal.fire(`Chat started by ${name}`, `Email: ${email}`, "success");
+      }
+    });
+  };
+
   return (
     <>
       <div className="grid md:grid-cols-2">
@@ -47,10 +123,17 @@ const Details = () => {
               <span>{delivers}</span>
             </p>
             <div class="flex justify-between gap-2 mt-4 mb-2 mx-8">
-              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300 ease-in-out"
+                onClick={handleRequestProposalButtonClick}
+              >
                 Request Proposal
               </button>
-              <button class="bg-green-500 text-white px-4 py-2 rounded">
+
+              <button
+                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors duration-300 ease-in-out"
+                onClick={handleChatButtonClick}
+              >
                 Chat with me
               </button>
             </div>
@@ -59,7 +142,8 @@ const Details = () => {
             <h3 className="text-4xl font-bold text-center mb-2">
               What people say?
             </h3>
-            {peopleSay && peopleSay.map((say, index) => <p key={index}>{say}</p>)}
+            {peopleSay &&
+              peopleSay.map((say, index) => <p key={index}>{say}</p>)}
           </div>
         </div>
         <div className="py-4 px-2">

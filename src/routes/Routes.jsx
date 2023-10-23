@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import Home from "../pages/Home/Home";
 import Blogs from "../pages/Blogs/Blogs";
-import Details from "../components/Details";
+import Details from "../components/HomePage/Details";
 
 const router = createBrowserRouter([
   {

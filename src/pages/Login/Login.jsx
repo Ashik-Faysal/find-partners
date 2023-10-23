@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState(null);
 
-  const { signIn, signInWithGoogle, upDateProfile } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
-  const handleLogin = (event) => {
+
+  const handleLogin = async (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -19,30 +22,50 @@ const Login = () => {
       setError("Password must be at least 6 characters long.");
       return;
     }
-    signIn(email, password)
-      .then((result) => {
-        const loggedUser = result.user;
-        upDateProfile(email, photoURL);
-        form.reset();
-        setError("");
-        navigate(from);
-      })
-      .catch((error) => setError(error.message));
+
+    try {
+      await signIn(email, password);
+
+      // Show a success toast
+      toast.success("Login successful!");
+
+      // Navigate to the home page
+      navigate(from);
+    } catch (error) {
+      setError(error.message);
+      toast.error("Login failed. Please try again.");
+    }
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await signInWithGoogle();
+
+      // Show a success toast
+      toast.success("Google login successful!");
+
+      // Navigate to the home page
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+      toast.error("Google login failed. Please try again.");
+    }
+  };
+
   return (
     <>
       <div className="hero min-h-screen bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-700">
         <div className="md:hero-content">
-          <div>
+          <div className="hidden md:block">
             <iframe
-              src="https://embed.lottiefiles.com/animation/27315"
-              width="700"
-              height="450"
+              width={800}
+              height={800}
+              src="https://lottie.host/?file=fcaa96af-b0ec-4b9c-b682-2bc80b0e2f93/Dy5jyViBEP.json"
             ></iframe>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900  shadow-2xl">
-            <h1 className="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500">
-              Please Login !
+            <h1 className="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 pt-4">
+              Please Login!
             </h1>
             <form onSubmit={handleLogin} className="card-body rounded-lg">
               <div className="form-control">
@@ -81,7 +104,7 @@ const Login = () => {
               <div className="flex gap-4 mx-auto">
                 <button
                   type="button"
-                  onClick={signInWithGoogle}
+                  onClick={handleGoogleLogin}
                   className="btn btn-outline btn-accent mt-2"
                 >
                   <img
@@ -96,7 +119,6 @@ const Login = () => {
               </div>
             </form>
             {error && <p className="text-red-500">{error}</p>}
-
             <span className="p-5 text-white">
               New to this Website?
               <Link
@@ -109,6 +131,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

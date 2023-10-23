@@ -128,6 +128,7 @@ const Header = () => {
           {user ? (
             <>
               <img
+                
                 className="w-12 h-12 rounded-full"
                 src={user.photoURL}
                 alt=""
